@@ -1,4 +1,4 @@
-# Default Vagrant File
+# Default Vagrant file for one box with forwarded port, shared directory and bootstrap.sh script for provisioning.
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
