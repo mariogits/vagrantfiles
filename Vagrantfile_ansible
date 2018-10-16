@@ -1,0 +1,11 @@
+# Vagrant file for provisioning with Ansible.
+
+Vagrant.configure("2") do |config|
+ config.vm.define "vm1" do |vm1|
+   vm1.vm.box = "ubuntu/trusty64"
+   config.vm.network "private_network", ip: "192.168.1.130"
+   config.vm.hostname = "vm1"
+   ansible.playbook = "playbook.yml"
+ end
+end
+
