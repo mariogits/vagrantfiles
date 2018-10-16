@@ -1,0 +1,14 @@
+# Vagrant file for multiple boxes.
+
+Vagrant.configure("2") do |config|
+ config.vm.define "webserver" do |webserver|
+   webserver.vm.box = "ubuntu/trusty64"
+   webserver.vm.network "private_network", ip: "192.168.1.200"
+   webserver.vm.hostname = "webserver"
+ end
+ config.vm.define "database" do |database|
+   database.vm.box = "ubuntu/trusty64"
+   database.vm.network "private_network", ip: "192.168.1.201"
+   database.vm.hostname = "database"
+ end
+end
